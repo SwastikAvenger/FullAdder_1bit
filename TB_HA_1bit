@@ -1,0 +1,29 @@
+`timescale 1ns/1ps
+module tb_HA_1bit;
+
+    //Testbench Sigbnals
+    reg en,a,b;    //inputs are declared as reg
+    wire sum,carry;     //outputs declared as wire
+    
+    //instantiating the device under test
+    HA_1bit dut(
+        .en(en),
+        .a(a),
+        .b(b),
+        .sum(sum),
+        .carry(carry));
+    
+    //Declaring input stimulation
+    initial begin
+        $display("Time\t a b | sum carry");     //display prints signal change only once
+        $monitor("%0t\t\t %b %b | %b   %b",$time, a,b,sum,carry); //$monitor prints signal change 
+                                                                //everytime signal changes
+        //Applying input combinations
+        en = 0; a = 0; b = 0; #10;  //#10 introduces a 10ns delay between each test vector
+        en = 1; a = 0; b = 0; #10;
+        en = 1; a = 0; b = 1; #10;
+        en = 1; a = 1; b = 0; #10;
+        en = 1; a = 1; b = 1; #10;
+        $finish;        
+    end
+endmodule
