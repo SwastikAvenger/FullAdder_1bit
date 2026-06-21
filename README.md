@@ -8,4 +8,4 @@ The **Sum** output is given by **S = A ⊕ B ⊕ C-in**.TThe **Carry** output is
 The Half Adder was instantiated twice to provide a correct functionality of the full adder. The Sum output from the first Half Adder acts as 
 an one input to the second half adder. The other input to the second half adder is the input carry value (carry value of the previous adder). 
 The final Sum and Carry are taken from the outputs of the second half adder. 
-More information about Binary Adders can be found (here)[https://www.geeksforgeeks.org/digital-logic/full-adder-in-digital-logic/] .
+More information about Binary Adders can be found [here](https://www.geeksforgeeks.org/digital-logic/full-adder-in-digital-logic/) .
